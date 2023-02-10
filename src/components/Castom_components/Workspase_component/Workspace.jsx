@@ -1,8 +1,8 @@
 import React, {useState, useMemo } from 'react';
-import Button from '../../UI/button/Button';
 import Modal from '../../UI/modal/Modal';
+import AuthorizForm from '../AuthorizForm_component/AuthorizForm';
 import NavigationForm from '../NavigationForm_component/NavigationForm';
-import POAdderForm from '../POAdderForm_component/POAdderForm';
+/*import POAdderForm from '../POAdderForm_component/POAdderForm';*/
 
 import classes from './Workspase.module.css';
 
@@ -15,8 +15,12 @@ const Workspace = (props) => {
         //document.write("<br>"+d);// тут работает
     }
 
+    const usersData = [{login:"Aboba", password:"1234"},
+                        {login:"Lola", password:"12345"},
+                        {login:"Pop", password:"1111fg"}]
+
     /*здесь в posts по-сути должны лежать значения из запроса к базе, который происходит перед созданием самого массива posts и отображает всё ПО*/
-  const [posts, setPosts]=useState([{id: Date.now()+1, title:'ARM NSI', body: Dates[0].toLocaleString(), status:"Ok"},
+     const [posts, setPosts]=useState([{id: Date.now()+1, title:'ARM NSI', body: Dates[0].toLocaleString(), status:"Ok"},
                                     {id: Date.now()+2, title:'SiteLine', body: Dates[1].toLocaleString(), status:"Ok"},
                                     {id: Date.now()+3, title:'Kontur', body: Dates[2].toLocaleString(), status:"Ok"},
                                     {id: Date.now()+4, title:'Polearm', body: Dates[3].toLocaleString(), status:"Ok"},
@@ -26,10 +30,23 @@ const Workspace = (props) => {
 const [PODiscr, setPODiscr]=useState(); //можно создавать состояния для каждой переменной*/
 /*const inpRef = useRef(); //для не управляемого компонента*/
 
-
-const createPOs = (newPO) => {
-setPosts([...posts, newPO])
+const userData= {login:"", password:""};
+const saveUserData = (data) => {
+    if (usersData.find(ud => ud.login===data.login && ud.password===data.password)){  
+        userData.login=data.login;
+        userData.password=data.password;
+        return true;
+    }
+    else{
+        userData.login="";
+        userData.password="";
+        return false;
+    }
 }
+
+/*const createPOs = (newPO) => {
+setPosts([...posts, newPO])
+}*/
 
 //из дочернего компонента POItem вытаскиваем нужный элемент массива и удаляем, меняя состояние массива
 const delitePOs = (POs) => {
@@ -63,7 +80,8 @@ const sortedAndSearchedPOs = useMemo(() => {
         <div className={classes.Workspace}>
             
             <Modal visible={modal} setVisible={setModal}>
-                <POAdderForm create={createPOs}/> 
+                {/*<POAdderForm create={createPOs}/>*/ }
+                <AuthorizForm saveUD={saveUserData} setVizible={setModal}/>
             </Modal>
             <NavigationForm filter={filter} setFilter={setFilter} delite={delitePOs} setModal={setModal}posts={sortedAndSearchedPOs} title="Cписок программного обеспечения"/>
         </div>
