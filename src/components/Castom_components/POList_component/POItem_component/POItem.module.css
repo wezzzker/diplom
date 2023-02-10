@@ -1,0 +1,13 @@
+.po_content{
+    max-height: 650px;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    border: 2px solid teal;
+    margin-top: 15px;   
+}
+.po_description{
+    display: inline-block;
+    justify-content: space-around;
+}

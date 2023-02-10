@@ -1,0 +1,15 @@
+.NavigationForm{
+    max-height: 800px;
+    height: 100%;
+    justify-content: space-evenly;
+    /*float: left;*/
+    display:block;
+    align-items: center;
+    width: 50%;
+    margin: 5px ;
+    padding: 15px;
+    border: 2px solid rgb(51, 33, 33);
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background:rgb(248, 238, 226);
+}

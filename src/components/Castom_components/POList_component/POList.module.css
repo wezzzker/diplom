@@ -1,0 +1,15 @@
+.POList{
+    max-height: 600px;
+    overflow: auto;
+    justify-content: space-between;
+    float: left;
+    display: block;
+    align-items: center;
+    width: 100%;
+    margin: 5px ;
+    padding: 15px;
+    border: 2px solid rgb(51, 33, 33);
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}

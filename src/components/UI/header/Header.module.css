@@ -1,0 +1,15 @@
+.Head{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25pt;
+    text-align: center;
+    width: auto;
+    display: flex;
+    padding: 15px;
+    border: 2px solid rgb(51, 33, 33);
+    margin-bottom: 15px;
+    margin: 5px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    background: rgb(248, 238, 226);
+}
