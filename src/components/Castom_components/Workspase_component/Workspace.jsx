@@ -64,8 +64,15 @@ const [filter, setFilter] = useState({sort:"", query:""})
 
 const sortedPOs = useMemo(() => {
     console.log("отработал хук useMemo")
-    if(filter.sort){
+    if(filter.sort==="title"){
         return [...posts].sort((a,b) => a[filter.sort].localeCompare(b[filter.sort]));
+    }
+    else if(filter.sort==="body"){
+        return [...posts].sort((a,b) => {
+            if (a[filter.sort]>b[filter.sort]) return -1
+            else if(a[filter.sort]==b[filter.sort]) return 0
+            else return 1
+        });
     }
     else return posts;
 },[filter.sort, posts]) /*sortedPOs - переменная с отсортированным списком, при создании переменной будет с значениями из posts без сортировки*/
@@ -76,12 +83,13 @@ const sortedAndSearchedPOs = useMemo(() => {
 },[filter.query, sortedPOs]) /*sortedAndSearchedPOs - переменная составляется и кешируется из отсортированного списка с фильтром, чтобы элементы этого списка содержали в названии то, */
 /* что содерждит строка поиска из navigationform */
 
+
     return (
         <div className={classes.Workspace}>
             
             <Modal visible={modal} setVisible={setModal}>
                 {/*<POAdderForm create={createPOs}/>*/ }
-                <AuthorizForm saveUD={saveUserData} setVizible={setModal}/>
+                <AuthorizForm saveUD={saveUserData}  setVizible={setModal} visible={modal}/>
             </Modal>
             <NavigationForm filter={filter} setFilter={setFilter} delite={delitePOs} setModal={setModal}posts={sortedAndSearchedPOs} title="Cписок программного обеспечения"/>
         </div>

@@ -4,7 +4,7 @@ import classes from "./Modal.module.css"
 const Modal = ({children, visible, setVisible}) => {
 
     const rootClasses = [classes.Modal] /*по умолчанию в массиве есть стиль для отключенного модального окна */
-    
+
     if(visible){
         rootClasses.push(classes.active);
     } /*если при проверке пропсов оказалось, что видимость окна в true, добавляется стиль для отображения модального окна */
