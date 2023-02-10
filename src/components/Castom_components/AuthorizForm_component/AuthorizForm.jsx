@@ -28,7 +28,10 @@ const AuthorizForm = ({saveUD, setVizible}) => {
             <Input type="text" required placeholder="Логин" value={authorizData.login} onChange={e =>  setAuthorizData({...authorizData, login: e.target.value})}/>
             <Input type="text" required placeholder="Пароль" value={authorizData.password} onChange={e =>  setAuthorizData({...authorizData, password: e.target.value})}/>
             <p style={{textAlign:"center"}}>{notice}</p>
-            <Button onClick={saveUDate}>Войти</Button>
+            <div style={{display:"flex", justifyContent:"center"}}>
+                <Button onClick={saveUDate}>Войти</Button>
+            </div>
+            
         </form>
     );
 };
