@@ -70,7 +70,7 @@ const sortedPOs = useMemo(() => {
     else if(filter.sort==="body"){
         return [...posts].sort((a,b) => {
             if (a[filter.sort]>b[filter.sort]) return -1
-            else if(a[filter.sort]==b[filter.sort]) return 0
+            else if(a[filter.sort]===b[filter.sort]) return 0
             else return 1
         });
     }

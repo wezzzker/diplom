@@ -5,16 +5,30 @@
 
 }
 #root{
-    
+    width: 100vw;
+    height: 100vh;
+    color: #1b2b4c;
     display: flex;
     justify-content: space-around;
-    background-color:antiquewhite;
+    background-color:rgb(238,238,238);
+    font-family: 'Steinbeck',sans-serif;
 }
 .App{
-    width: 100%;
+    
+    width: 100vw;
     height: 100vh;
 }
-
+.title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.links{
+    display: flex;
+    flex:auto;
+    justify-content: space-evenly;
+    font-size: large;
+}
 /*.post_content{
     display: flex;
     justify-content: space-between;

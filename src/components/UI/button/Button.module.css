@@ -2,10 +2,10 @@
    height: min-content;
     width: max-content;
     padding:5px 15px;
-    color: teal;
+    color: rgb(65,88,208);
     font-size: 14px;
     background: transparent;
-    border: 1px solid teal;
+    border: 1px solid rgb(65,88,208);
     cursor: pointer;
     margin: 5px;
 }
