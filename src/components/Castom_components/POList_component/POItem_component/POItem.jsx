@@ -13,11 +13,11 @@ const POItem = (props) => {
           <strong>{props.number}</strong>
           <strong>{props.post.title}</strong>
           <div className="po_description">
-              <p>{props.post.body}</p>
+              <p>{props.post.date}</p>
           </div>
           <strong>{props.post.status}</strong>
           <div className="po_btn">
-            <Button onClick={() => props.delite(props.post)}>Delite</Button>
+            <Button onClick={() => props.setAddedPO(props.post)}>Инфо</Button>
           </div>
         </div>
     </div>

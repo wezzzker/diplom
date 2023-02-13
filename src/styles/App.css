@@ -13,7 +13,7 @@
     font-family: 'Steinbeck',sans-serif;
 }
 .App{
-    width: 100vw;
+   
     height: 100vh;
 }
 .title{
@@ -26,6 +26,23 @@
     flex:auto;
     justify-content: space-evenly;
     font-size: large;
+}
+.link{
+    text-decoration: none;
+    color: #0f7afc;
+   /* border-bottom: 1px solid;
+    border-bottom-color: rgba(15, 122, 252, 0.2);*/
+}
+.link   :hover{
+    text-decoration: none;
+    color: #4160ea;
+    border-bottom: 1px solid;
+    border-bottom-color: #4160ea73;
+}
+
+.active{
+    color:var(--color-active);
+    cursor: default;
 }
 /*.post_content{
     display: flex;

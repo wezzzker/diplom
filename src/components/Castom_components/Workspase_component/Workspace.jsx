@@ -2,6 +2,7 @@ import React, {useState, useMemo } from 'react';
 import Modal from '../../UI/modal/Modal';
 import AuthorizForm from '../AuthorizForm_component/AuthorizForm';
 import NavigationForm from '../NavigationForm_component/NavigationForm';
+import POInfo from '../POInfo_component/POInfo';
 /*import POAdderForm from '../POAdderForm_component/POAdderForm';*/
 
 import classes from './Workspase.module.css';
@@ -20,10 +21,10 @@ const Workspace = (props) => {
                         {login:"Pop", password:"1111fg"}]
 
     /*здесь в posts по-сути должны лежать значения из запроса к базе, который происходит перед созданием самого массива posts и отображает всё ПО*/
-     const [posts, setPosts]=useState([{id: Date.now()+1, title:'ARM NSI', body: Dates[0].toLocaleString(), status:"Ok"},
-                                    {id: Date.now()+2, title:'SiteLine', body: Dates[1].toLocaleString(), status:"Ok"},
-                                    {id: Date.now()+3, title:'Kontur', body: Dates[2].toLocaleString(), status:"Ok"},
-                                    {id: Date.now()+4, title:'Polearm', body: Dates[3].toLocaleString(), status:"Ok"},
+     const [posts, setPosts]=useState([{id: Date.now()+1, title:'ARM NSI', date: Dates[0].toLocaleString(), status:"Ok", errorID:"23R345",errorDIS:"щукапмущшкомщушкомшщуком"},
+                                    {id: Date.now()+2, title:'SiteLine', date: Dates[1].toLocaleString(), status:"Ok",errorID:"23R33345",errorDIS:"цйумуцйщшмщшцйрмцрйм"},
+                                    {id: Date.now()+3, title:'Kontur', date: Dates[2].toLocaleString(), status:"Ok",errorID:"23R3rqd45",errorDIS:"цуйщшрмцйррррзршмцймсцвсй"},
+                                    {id: Date.now()+4, title:'Polearm', date: Dates[3].toLocaleString(), status:"Ok",errorID:"23Rr32345",errorDIS:"цйумщшгмцййршщвтсцймщшгм"},
                                     ]); 
 
 /*const [POName, setPOName]=useState(); //для управляемого компонента
@@ -48,6 +49,12 @@ const saveUserData = (data) => {
 setPosts([...posts, newPO])
 }*/
 
+const [addedPOs, setAddedPOs]= useState({id:null, title:"", date:null, status:"", errorID:"",errorDIS:""})
+
+const POinfo = (PO) =>{
+    setAddedPOs({id:PO.id, title:PO.title, date:PO.date, status:PO.status, errorDIS:PO.errorDIS, errorID: PO.errorID});
+}
+
 //из дочернего компонента POItem вытаскиваем нужный элемент массива и удаляем, меняя состояние массива
 const delitePOs = (POs) => {
 setPosts(posts.filter(p=>p.id!==POs.id))
@@ -67,7 +74,7 @@ const sortedPOs = useMemo(() => {
     if(filter.sort==="title"){
         return [...posts].sort((a,b) => a[filter.sort].localeCompare(b[filter.sort]));
     }
-    else if(filter.sort==="body"){
+    else if(filter.sort==="date"){
         return [...posts].sort((a,b) => {
             if (a[filter.sort]>b[filter.sort]) return -1
             else if(a[filter.sort]===b[filter.sort]) return 0
@@ -91,7 +98,8 @@ const sortedAndSearchedPOs = useMemo(() => {
                 {/*<POAdderForm create={createPOs}/>*/ }
                 <AuthorizForm saveUD={saveUserData}  setVizible={setModal} visible={modal}/>
             </Modal>
-            <NavigationForm filter={filter} setFilter={setFilter} delite={delitePOs} setModal={setModal}posts={sortedAndSearchedPOs} title="Cписок программного обеспечения"/>
+            <NavigationForm setAddedPO={POinfo} filter={filter} setFilter={setFilter} delite={delitePOs} setModal={setModal}posts={sortedAndSearchedPOs} title="Cписок программного обеспечения"/>
+            <POInfo addedPO={addedPOs}/>
         </div>
     );
 };

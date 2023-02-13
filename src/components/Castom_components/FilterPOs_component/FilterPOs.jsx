@@ -13,7 +13,7 @@ const FilterPOs = ({filter, setFilter, setModal}) => {
                     defaultValue="Сортировка"
                     options={[
                         {value:'title', name:'По названию'},
-                        {value:'body', name:'По последнему обновлению'}
+                        {value:'date', name:'По последнему обновлению'}
                     ]}
                 
                 />

@@ -1,0 +1,16 @@
+.POInfoFields{
+    max-height: 600px;
+    overflow: auto;
+    display: block;
+    /*flex:  warp;*/
+    margin: 5px ;
+    padding: 15px;
+    border: 0.5px solid #1b2b4c;
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.fields{
+    display: flex;
+    align-items: center ;
+}

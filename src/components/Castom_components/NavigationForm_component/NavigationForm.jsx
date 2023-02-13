@@ -3,7 +3,7 @@ import FilterPOs from '../FilterPOs_component/FilterPOs';
 import POList from '../POList_component/POList';
 import classes from './NavigationForm.module.css'
 
-const NavigationForm = ({posts, title, delite, filter, setFilter, setModal}) => {
+const NavigationForm = ({posts, title, delite, filter, setFilter, setModal, setAddedPO}) => {
 
    
     return (
@@ -12,7 +12,7 @@ const NavigationForm = ({posts, title, delite, filter, setFilter, setModal}) => 
             <hr style={{margin:'15px 0'}}/>
             <FilterPOs filter={filter} setFilter={setFilter} setModal={setModal}/>
             <hr style={{margin:'15px 0'}}/>
-            <POList delite={delite} posts={posts}/>
+            <POList delite={delite} posts={posts} setAddedPO={setAddedPO}/>
                 
         </div>
     );
