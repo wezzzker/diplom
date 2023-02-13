@@ -1,17 +1,16 @@
-.Head{
-    
-    font-size: 25pt;
-    text-align: center;
-    width: auto;
-    display: flex;
-    flex:center;
-    padding: 15px;
-    /*border: 2px solid rgb(51, 33, 33);*/
-    margin-bottom: 15px;
-    margin: 5px 0;
-    /*border-radius: 5px;*/
-    justify-content: space-between;
-    align-items: center;
-    background: #1b2b4c;
-    color:#fff;
+.Head {
+  font-size: 25pt;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex: center;
+  padding: 15px;
+  /*border: 2px solid rgb(51, 33, 33);*/
+  margin-bottom: 15px;
+  margin: 5px 0;
+  /*border-radius: 5px;*/
+  justify-content: space-between;
+  align-items: center;
+  background: #1b2b4c;
+  color: #fff;
 }
