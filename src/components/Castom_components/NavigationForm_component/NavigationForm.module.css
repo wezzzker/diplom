@@ -1,6 +1,6 @@
 .NavigationForm{
-    max-height: 800px;
-    height: 100%;
+   
+    height: 82vh;
     justify-content: space-evenly;
     /*float: left;*/
     display:block;

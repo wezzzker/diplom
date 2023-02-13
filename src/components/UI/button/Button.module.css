@@ -8,4 +8,10 @@
     border: 1px solid rgb(65,88,208);
     cursor: pointer;
     margin: 5px;
+   
+    
+}
+.Btn:hover{
+    color: #0f7afc;
+    border: 1px solid #0f7afc;
 }

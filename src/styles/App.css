@@ -5,8 +5,7 @@
 
 }
 #root{
-    width: 100vw;
-    height: 100vh;
+   
     color: #1b2b4c;
     display: flex;
     justify-content: space-around;
@@ -14,7 +13,6 @@
     font-family: 'Steinbeck',sans-serif;
 }
 .App{
-    
     width: 100vw;
     height: 100vh;
 }
